@@ -1,11 +1,7 @@
-attach.js
-=========
+#attach.js
 Attaches JavaScript to HTML without messy selectors. Also takes care of reattaching JavaScript to HTML when HTML is dynamically injected (ie. via AJAX). I have written attach.js in pure JavaScript but in the examples I have shown how to use it with jQuery.
 
-[Download latest version](https://raw.github.com/nicbell/attach.js/master/attach.js).
-
-The basics
-----------
+##The problem
 Ever thought CSS selectors in your JavaScript were messy or wanted to reatttach JavaScript to the DOM after content was dynamically loaded.
 ```html
 <div class="someSelector">..</div>
@@ -18,8 +14,9 @@ $(document).ready(function(){
   var x = new SomeThing($('.anotherSelector'));
 });
 ```
-Pretty messy and what if the class name changes? Now using **attach.js**.
+Pretty messy and what if the class name changes? 
 
+##Example
 ```html
 <div class="someSelector" data-attach="pluginName">..</div>
 <div class="anotherSelector" data-attach="SomeThing">..</div>
@@ -36,8 +33,12 @@ $(document).ready(function(){
   Attach.run();
 });
 ```
-More detailed examples (coming soon, sleep now):
------------------------
+
+##Usage
+
+##API
+
+##More detailed examples (coming soon, sleep now):
 * Attaching multiple plugins and classes to a single element.
 * Attaching plugins and classes with parameters.
 * Storing instance references.
