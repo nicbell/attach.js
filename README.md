@@ -38,6 +38,7 @@ $(document).ready(function(){
 ```
 More detailed examples (coming soon, sleep now):
 -----------------------
+* Attaching multiple plugins and classes to a single element.
 * Attaching plugins and classes with parameters.
 * Storing instance references.
 * Reattaching after a DOM update.
