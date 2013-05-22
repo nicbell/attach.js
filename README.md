@@ -1,9 +1,7 @@
 attach.js
 =========
 
-Attaches JavaScript to HTML without messy selectors. Also takes care out reattaching JavaScript to HTML when HTML is dynamically injected (ie. via AJAX). 
-
-This project was inspired but ClientCide's Behavior project and DOM instantiation in Twitter Bootstrap.
+Attaches JavaScript to HTML without messy selectors. Also takes care out reattaching JavaScript to HTML when HTML is dynamically injected (ie. via AJAX). I have written attach.js in pure JavaScript but in the examples have shown how to use it with jQuery.
 
 Why:
 ----
@@ -38,3 +36,11 @@ $(document).ready(function(){
   Attach.run();
 });
 ```
+More detailed examples (coming soon, sleep now):
+-----------------------
+* Attaching plugins and classes with parameters.
+* Storing instance references.
+* Reattaching after a DOM update.
+
+--
+This project was inspired but ClientCide's Behavior project and DOM instantiation in Twitter Bootstrap.
