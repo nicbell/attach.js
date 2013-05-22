@@ -45,4 +45,4 @@ More detailed examples (coming soon, sleep now):
 * Advanced Mootools example.
 
 --
-This project was inspired but ClientCide's Behavior project and DOM instantiation in Twitter Bootstrap.
+This project was inspired by ClientCide's Behavior project and DOM instantiation in Twitter Bootstrap.
