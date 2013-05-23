@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Attach.js : Attaches JavaScript to HTML without messy selectors. Also takes care out reattaching JavaScript to HTML when HTML is dynamically injected (ie. via AJAX) " />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Attach.js</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/nicbell/attach.js">View on GitHub</a>
+
+          <h1 id="project_title">Attach.js</h1>
+          <h2 id="project_tagline">Attaches JavaScript to HTML without messy selectors. Also takes care out reattaching JavaScript to HTML when HTML is dynamically injected (ie. via AJAX) </h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/nicbell/attach.js/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/nicbell/attach.js/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>attach.js</h1>
+
+<p>Attaches JavaScript to HTML without messy selectors. Also takes care of reattaching JavaScript to HTML when HTML is dynamically injected (ie. via AJAX). I have written attach.js in pure JavaScript but in the examples I have shown how to use it with jQuery.</p>
+
+<h2>The problem</h2>
+
+<p>Ever thought CSS selectors in your JavaScript were messy or wanted to reatttach JavaScript to the DOM after content was dynamically loaded.</p>
+
+<div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"someSelector"</span><span class="nt">&gt;</span>..<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"anotherSelector"</span><span class="nt">&gt;</span>..<span class="nt">&lt;/div&gt;</span>
+</pre></div>
+
+<div class="highlight"><pre><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+  <span class="nx">$</span><span class="p">(</span><span class="s1">'.someSelector'</span><span class="p">).</span><span class="nx">pluginName</span><span class="p">();</span>
+  <span class="c1">//or</span>
+  <span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">SomeThing</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s1">'.anotherSelector'</span><span class="p">));</span>
+<span class="p">});</span>
+</pre></div>
+
+<p>Pretty messy and what if the class name changes? </p>
+
+<h2>Example</h2>
+
+<div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"someSelector"</span> <span class="na">data-attach=</span><span class="s">"pluginName"</span><span class="nt">&gt;</span>..<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"anotherSelector"</span> <span class="na">data-attach=</span><span class="s">"SomeThing"</span><span class="nt">&gt;</span>..<span class="nt">&lt;/div&gt;</span>
+</pre></div>
+
+<div class="highlight"><pre><span class="nx">Attach</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s1">'pluginName'</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">ele</span><span class="p">){</span>
+  <span class="nx">$</span><span class="p">(</span><span class="nx">ele</span><span class="p">).</span><span class="nx">pluginName</span><span class="p">();</span>
+<span class="p">});</span>
+<span class="nx">Attach</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s1">'SomeThing'</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">ele</span><span class="p">){</span>
+   <span class="k">new</span> <span class="nx">SomeThing</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="nx">ele</span><span class="p">));</span>
+<span class="p">});</span>
+
+<span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+  <span class="nx">Attach</span><span class="p">.</span><span class="nx">run</span><span class="p">();</span>
+<span class="p">});</span>
+</pre></div>
+
+<h2>Usage</h2>
+
+<h2>API</h2>
+
+<h2>More detailed examples (coming soon, sleep now):</h2>
+
+<ul>
+<li>Attaching multiple plugins and classes to a single element.</li>
+<li>Attaching plugins and classes with parameters.</li>
+<li>Storing instance references.</li>
+<li>Reattaching after a DOM update.</li>
+<li>Advanced Mootools example.</li>
+</ul><h2></h2>
+
+<p>This project was inspired by ClientCide's Behavior project and DOM instantiation in Twitter Bootstrap.</p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Attach.js maintained by <a href="https://github.com/nicbell">nicbell</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
