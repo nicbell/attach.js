@@ -1,5 +1,5 @@
 /**
- * Attach.js v1.0.0
+ * Attach.js v1.0.1
  * Attaches JavaScript to HTML without messy selectors. 
  *
  * https://github.com/nicbell/attach.js
@@ -16,8 +16,13 @@
         this.items.push({ id: id, func: fn });
     };
 
-    Attach.remove = function (fn) {
-        this.items.splice(this.items.indexOf(fn), 1);
+    Attach.remove = function (id) {
+        for (var i = this.items.length; i--;) {
+            if (this.items[i].id === id) {
+                this.items.splice(i, 1);
+                break;
+            }
+        }
     };
 
     Attach.run = function () {
