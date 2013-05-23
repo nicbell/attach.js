@@ -1,5 +1,7 @@
-#attach.js
-Attaches JavaScript to HTML without messy selectors. Also takes care of reattaching JavaScript to HTML when HTML is dynamically injected (ie. via AJAX). I have written attach.js in pure JavaScript but in the examples I have shown how to use it with jQuery.
+#Intro
+Attach.js removes dependancy on messy CSS selectors when attaching JavaScript to the page. Attach.js also encapsulates all your DOM "attachments" so that they can easily be reattached when the page is dynamically updated (ie. via AJAX). 
+
+I have written Attach.js in pure JavaScript but in the examples I have shown how to use it with jQuery and Mootools.
 
 ##The problem
 Ever thought CSS selectors in your JavaScript were messy or wanted to reatttach JavaScript to the DOM after content was dynamically loaded.
