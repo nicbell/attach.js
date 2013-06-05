@@ -31,15 +31,17 @@
     <!-- MAIN CONTENT -->
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
-        <h1>Intro</h1>
+        <h1>
+<a name="intro" class="anchor" href="#intro"><span class="octicon octicon-link"></span></a>Intro</h1>
 
 <p>Attach.js removes dependancy on messy CSS selectors when attaching JavaScript to the page. Attach.js also encapsulates all your DOM "attachments" so that they can easily be reattached when the page is dynamically updated (ie. via AJAX). </p>
 
 <p>I have written Attach.js in pure JavaScript but in the examples I have shown how to use it with jQuery and Mootools.</p>
 
-<h2>The problem</h2>
+<h2>
+<a name="the-problem" class="anchor" href="#the-problem"><span class="octicon octicon-link"></span></a>The problem</h2>
 
-<p>Ever thought CSS selectors in your JavaScript were messy or wanted to reatttach JavaScript to the DOM after content was dynamically loaded.</p>
+<p>Ever thought CSS selectors in your JavaScript were messy or wanted to reatttach JavaScript to the DOM after content was dynamically loaded?</p>
 
 <div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"someSelector"</span><span class="nt">&gt;</span>..<span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"anotherSelector"</span><span class="nt">&gt;</span>..<span class="nt">&lt;/div&gt;</span>
@@ -52,9 +54,10 @@
 <span class="p">});</span>
 </pre></div>
 
-<p>Pretty messy and what if the class name changes? </p>
+<p>Pretty messy, and what if the class name changes? </p>
 
-<h2>Example</h2>
+<h2>
+<a name="example" class="anchor" href="#example"><span class="octicon octicon-link"></span></a>Example</h2>
 
 <div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"someSelector"</span> <span class="na">data-attach=</span><span class="s">"pluginName"</span><span class="nt">&gt;</span>..<span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"anotherSelector"</span> <span class="na">data-attach=</span><span class="s">"SomeThing"</span><span class="nt">&gt;</span>..<span class="nt">&lt;/div&gt;</span>
@@ -72,11 +75,25 @@
 <span class="p">});</span>
 </pre></div>
 
-<h2>Usage</h2>
+<h2>
+<a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage</h2>
 
-<h2>API</h2>
+<h2>
+<a name="api" class="anchor" href="#api"><span class="octicon octicon-link"></span></a>API</h2>
 
-<h2>More detailed examples (coming soon, sleep now):</h2>
+<ul>
+<li>
+<code>Attach.add(id, callback)</code> {Function} Adds callback for id (matches 'data-attach' value). The callback has one parameter 'el' (DOM element).</li>
+<li>
+<code>Attach.remove(id)</code> {Function} Removes callback for id.</li>
+<li>
+<code>Attach.run()</code> {Function} Queries DOM and runs callbacks for 'data-attach' values.</li>
+<li>
+<code>Attach.engine</code> {Object} Set this to replace the query engine an engine of your choice.</li>
+<li>
+<code>Attach.items</code> {Array} List of attachments.</li>
+</ul><h2>
+<a name="more-detailed-examples-coming-soon-sleep-now" class="anchor" href="#more-detailed-examples-coming-soon-sleep-now"><span class="octicon octicon-link"></span></a>More detailed examples (coming soon, sleep now):</h2>
 
 <ul>
 <li>Attaching multiple plugins and classes to a single element.</li>
