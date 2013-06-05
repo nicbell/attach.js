@@ -4,7 +4,7 @@ Attach.js removes dependancy on messy CSS selectors when attaching JavaScript to
 I have written Attach.js in pure JavaScript but in the examples I have shown how to use it with jQuery and Mootools.
 
 ##The problem
-Ever thought CSS selectors in your JavaScript were messy or wanted to reatttach JavaScript to the DOM after content was dynamically loaded.
+Ever thought CSS selectors in your JavaScript were messy or wanted to reatttach JavaScript to the DOM after content was dynamically loaded?
 ```html
 <div class="someSelector">..</div>
 <div class="anotherSelector">..</div>
@@ -16,7 +16,7 @@ $(document).ready(function(){
   var x = new SomeThing($('.anotherSelector'));
 });
 ```
-Pretty messy and what if the class name changes? 
+Pretty messy, and what if the class name changes? 
 
 ##Example
 ```html
@@ -39,6 +39,11 @@ $(document).ready(function(){
 ##Usage
 
 ##API
+- `Attach.add(id, callback)` {Function} Adds callback for id (matches 'data-attach' value). The callback has one parameter 'el' (DOM element).
+- `Attach.remove(id)` {Function} Removes callback for id.
+- `Attach.run()` {Function} Queries DOM and runs callbacks for 'data-attach' values.
+- `Attach.engine` {Object} Set this to replace the query engine an engine of your choice.
+- `Attach.items` {Array} List of attachments.
 
 ##More detailed examples (coming soon, sleep now):
 * Attaching multiple plugins and classes to a single element.
