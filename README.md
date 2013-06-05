@@ -18,25 +18,35 @@ $(document).ready(function(){
 ```
 Pretty messy, and what if the class name changes? 
 
+##Usage
+```html
+<div data-attach="id">..</div> <!-- Attachments matching id will be added to this element -->
+<div data-attach="id2">..</div> <!-- Attachments matching id2 will be added to this element -->
+<div data-attach="id id2">..</div> <!-- Attachments matching id and id2 will be added to this element -->
+```
+```javascript
+Attach.add('id',function(el){..}); //Add an attachment for id
+Attach.add('id2',function(el){..}); //Add an attachment for id2
+Attach.run(); //Attach to DOM
+```
+
 ##Example
 ```html
 <div class="someSelector" data-attach="pluginName">..</div>
 <div class="anotherSelector" data-attach="SomeThing">..</div>
 ```
 ```javascript
-Attach.add('pluginName',function(ele){
-  $(ele).pluginName();
+Attach.add('pluginName',function(el){
+  $(el).pluginName();
 });
-Attach.add('SomeThing',function(ele){
-   new SomeThing($(ele));
+Attach.add('SomeThing',function(el){
+   new SomeThing($(el));
 });
 
 $(document).ready(function(){
   Attach.run();
 });
 ```
-
-##Usage
 
 ##API
 - `Attach.add(id, callback)` {Function} Adds callback for id (matches 'data-attach' value). The callback has one parameter 'el' (DOM element).
