@@ -55,12 +55,12 @@ $(document).ready(function(){
 - `Attach.engine` {Object} Set this to replace the query engine an engine of your choice.
 - `Attach.items` {Array} List of attachments.
 
-##More detailed examples (coming soon, sleep now):
+##More detailed examples:
 * [Attaching multiple plugins and classes to a single element](https://github.com/nicbell/attach.js/wiki/Attaching-multiple-plugins-and-classes-to-a-single-element).
 * [Attaching plugins and classes with parameters](https://github.com/nicbell/attach.js/wiki/Attaching-plugins-and-classes-with-parameters).
-* Storing instance references.
-* Reattaching after a DOM update.
-* Advanced Mootools example.
+* Storing instance references (coming soon).
+* Reattaching after a DOM update (coming soon).
+* Advanced Mootools example (coming soon).
 
 --
 This project was inspired by ClientCide's Behavior project and DOM instantiation in Twitter Bootstrap.
