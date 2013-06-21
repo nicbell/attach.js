@@ -59,7 +59,7 @@ $(document).ready(function(){
 * [Attaching multiple plugins and classes to a single element](https://github.com/nicbell/attach.js/wiki/Attaching-multiple-plugins-and-classes-to-a-single-element).
 * [Attaching plugins and classes with parameters](https://github.com/nicbell/attach.js/wiki/Attaching-plugins-and-classes-with-parameters).
 * [Storing instance references](https://github.com/nicbell/attach.js/wiki/Storing-instance-references).
-* Reattaching after a DOM update (coming soon).
+* [Reattaching after a DOM update](https://github.com/nicbell/attach.js/wiki/Reattaching-after-a-DOM-update).
 * Advanced Mootools example (coming soon).
 
 --
