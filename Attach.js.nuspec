@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+    <metadata>
+        <id>Attach.js</id>
+        <version>1.0.1</version>
+        <authors>Nic Bell</authors>
+        <projectUrl>http://nicbell.github.io/attach.js/</projectUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>Attach.js removes dependancy on messy CSS selectors when attaching JavaScript to the page. Attach.js also encapsulates all your DOM "attachments" so that they can easily be reattached when the page is dynamically updated (ie. via AJAX).</description>
+        <summary>A DOM instantiation API designed to tidy up and encapsulate attaching JavaScript to the page.</summary>
+        <copyright>Nic Bell</copyright>
+        <language>en-GB</language>
+        <tags>JavaScript</tags>
+    </metadata>
+    <files>
+        <file src="attach.js" target="content\Resources\js\libs\attach.js" />
+        <file src="attach.min.js" target="content\Resources\js\libs\attach.min.js" />
+    </files>
+</package>
