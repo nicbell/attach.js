@@ -1,5 +1,5 @@
 /**
- * Attach.js v1.0.1
+ * Attach.js v1.0.2
  * Attaches JavaScript to HTML without messy selectors. 
  *
  * https://github.com/nicbell/attach.js
@@ -7,7 +7,7 @@
  * Copyright 2013 Nic Bell
  */
 
-(function (Attach) {
+;(function (Attach) {
     Attach.engine = null;
 
     Attach.items = [];
