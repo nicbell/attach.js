@@ -60,7 +60,7 @@ $(document).ready(function(){
 * [Attaching plugins and classes with parameters](https://github.com/nicbell/attach.js/wiki/Attaching-plugins-and-classes-with-parameters).
 * [Storing instance references](https://github.com/nicbell/attach.js/wiki/Storing-instance-references).
 * [Reattaching after a DOM update](https://github.com/nicbell/attach.js/wiki/Reattaching-after-a-DOM-update).
-* Advanced Mootools example (coming soon).
+* [Advanced Mootools example](https://github.com/nicbell/attach.js/wiki/Advanced-Mootools-example).
 
 --
 This project was inspired by ClientCide's Behavior project and DOM instantiation in Twitter Bootstrap.
