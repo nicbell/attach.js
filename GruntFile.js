@@ -66,4 +66,7 @@ module.exports = function (grunt) {
 
     grunt.registerTask('test', ['jshint']);
     grunt.registerTask('default', ['test', 'uglify', 'clean']);
+
+    //This is an extra task incase we want to do something different with Travis CI
+    grunt.registerTask('travis', ['jshint', 'uglify', 'clean']);
 };
