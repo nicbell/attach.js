@@ -10,16 +10,7 @@ module.exports = function (grunt) {
             options: {
                 jshintrc: '.jshintrc'
             },
-            all: [
-				'Gruntfile.js',
-				'attach.js'
-            ]
-        },
-        strip_code: {
-            dist: {
-                src: 'attach.js',
-                dest: '.tmp/attach.js'
-            }
+            all: ['Gruntfile.js', 'attach.js']
         },
         uglify: {
             options: {
@@ -39,7 +30,6 @@ module.exports = function (grunt) {
 
     grunt.registerTask('default', [
 		'test',
-		'strip_code',
 		'uglify',
 		'clean'
     ]);
