@@ -4,4 +4,7 @@ node_js:
 before_script:
    - npm install -g grunt-cli
 after_success:
+   - git config --global user.email "me@nicbell.net"
+   - git config --global user.name "Nic Bell"
    - git commit -a -m "Committed by Travis-CI build number"
+   - git push https://${GH_TOKEN}@github.com/nicbell/attach.js
