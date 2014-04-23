@@ -11,7 +11,7 @@ module.exports = function (grunt) {
                 jquery: false,
                 debug: false,
                 devel: false,
-                asi: false,
+                asi: true,
                 laxbreak: false,
                 bitwise: true,
                 boss: false,
@@ -42,7 +42,7 @@ module.exports = function (grunt) {
         },
         uglify: {
             options: {
-                banner: '/*! <%= pkg.name %> v<%= pkg.version %> | MIT license | http://github.com/nicbell/attach.js */\n'
+                banner: '/*! <%= pkg.name %> v<%= pkg.version %> | <%= pkg.license %> license | <%= pkg.homepage %> */\n'
             },
             dist: {
                 src: '.tmp/attach.js',
