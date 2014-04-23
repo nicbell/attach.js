@@ -4,4 +4,4 @@ node_js:
 before_script:
    - npm install -g grunt-cli
 after_success:
-   - git commit -a -m "Committed by Travis-CI build number: $TRAVIS_JOB_ID"
+   - git commit -a -m "Committed by Travis-CI build number ${TRAVIS_JOB_ID - 1}"
