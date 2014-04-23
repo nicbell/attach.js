@@ -1,0 +1,31 @@
+{
+    "name": "Attach.js",
+    "version": "1.0.2",
+    "description": "Attaches JavaScript to HTML without messy selectors.",
+    "homepage": "http://nicbell.github.io/attach.js/",
+    "ignore": [
+      "**/.*",
+      "*.json",
+      "*.md",
+      "*.nuspec"
+    ],
+    "main": [
+      "attach.js",
+      "attach.min.js"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/nicbell/attach.js.git"
+    },
+    "author": "Nic Bell",
+    "license": "MIT",
+    "keywords": ["javascript", "attach", "DOM"],
+    "devDependencies": {
+        "grunt-contrib-jshint": "~0.8.0",
+        "grunt-contrib-uglify": "~0.2.7",
+        "grunt-contrib-clean": "~0.5.0",
+        "grunt-strip-code": "~0.1.2",
+        "load-grunt-tasks": "~0.2.1",
+        "time-grunt": "~0.2.7"
+    }
+}
