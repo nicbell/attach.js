@@ -1,0 +1,15 @@
+{
+  "name": "Attach.js",
+  "version": "1.0.2",
+  "description": "Attaches JavaScript to HTML without messy selectors.",
+  "main": [
+    "attach.js",
+    "attach.min.js"
+  ],
+  "ignore": [
+    "**/.*",
+    "*.json",
+    "*.md",
+    "*.nuspec"
+  ],
+}
