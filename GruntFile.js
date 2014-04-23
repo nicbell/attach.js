@@ -44,7 +44,7 @@ module.exports = function (grunt) {
                 banner: '/*! <%= pkg.name %> v<%= pkg.version %> | <%= pkg.license %> license | <%= pkg.homepage %> */\n'
             },
             dist: {
-                src: '.tmp/attach.js',
+                src: 'attach.js',
                 dest: 'attach.min.js'
             }
         },
