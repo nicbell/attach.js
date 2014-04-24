@@ -6,8 +6,9 @@ before_script:
 after_success:
 - git config user.email "${GIT_EMAIL}"
 - git config user.name "${GIT_NAME}"
+- git add -f .
 - git commit -a -m "Committed by Travis-CI"
-- git push https://${GH_TOKEN}@github.com/nicbell/attach.js
+- git push https://${GH_TOKEN}@github.com/nicbell/attach.js master
 env:
   global:
     secure: PHKaro0zAsdL7JmPTujZYftJDUzvr9KE23kjb3sKQbhgaX3ZR6txrKt5dYVaOyPX0L3RZF4kv/waIVLUuOUqiGDTwjscsY5bMmBOKdl7EJvtIt4M9IEtwhvjaxOOG/LdvqMx6QdaezyfAH0dvezjOdTnn2AXArnqZTM6wVSc4t4=
