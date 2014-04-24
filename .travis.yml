@@ -7,7 +7,7 @@ after_success:
 - git config --global user.email "${GIT_EMAIL}"
 - git config --global user.name "${GIT_NAME}"
 - git checkout master
-- git commit -a -m "Committed by Travis-CI"
+- git commit -a -m "Committed by Travis-CI [ci skip]"
 - git push https://${GH_TOKEN}@github.com/nicbell/attach.js.git master
 env:
   global:
