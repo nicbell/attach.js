@@ -11,7 +11,9 @@
     "**/.*",
     "*.json",
     "*.md",
-    "*.nuspec"
+    "*.nuspec",
+    "Gruntfile.js",
+    "bower.json"
   ],
   "authors": [
     { "name": "Nic Bell" }
