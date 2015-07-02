@@ -1,95 +1,77 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en-us">
   <head>
-    <meta charset='utf-8' />
-    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="description" content="Attach.js : A DOM instantiation API designed to tidy up and encapsulate attaching JavaScript to the page." />
-
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
-
-    <title>Attach.js</title>
+    <meta charset="UTF-8">
+    <title>Attach.js by nicbell</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
   </head>
-
   <body>
+    <section class="page-header">
+      <h1 class="project-name">Attach.js</h1>
+      <h2 class="project-tagline">A DOM instantiation API designed to tidy up and encapsulate attaching JavaScript to the page.</h2>
+      <a href="https://github.com/nicbell/attach.js" class="btn">View on GitHub</a>
+      <a href="https://github.com/nicbell/attach.js/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/nicbell/attach.js/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
 
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/nicbell/attach.js">View on GitHub</a>
-
-          <h1 id="project_title">Attach.js</h1>
-          <h2 id="project_tagline">A DOM instantiation API designed to tidy up and encapsulate attaching JavaScript to the page.</h2>
-
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/nicbell/attach.js/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/nicbell/attach.js/tarball/master">Download this project as a tar.gz file</a>
-            </section>
-        </header>
-    </div>
-
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <h1>
-<a name="intro" class="anchor" href="#intro"><span class="octicon octicon-link"></span></a>Intro</h1>
+    <section class="main-content">
+      <h1>
+<a id="intro" class="anchor" href="#intro" aria-hidden="true"><span class="octicon octicon-link"></span></a>Intro</h1>
 
 <p>Attach.js removes dependancy on messy CSS selectors when attaching JavaScript to the page. Attach.js also encapsulates all your DOM "attachments" so that they can easily be reattached when the page is dynamically updated (ie. via AJAX). </p>
 
 <p>I have written Attach.js in pure JavaScript but in the examples I have shown how to use it with jQuery and Mootools.</p>
 
 <h2>
-<a name="the-problem" class="anchor" href="#the-problem"><span class="octicon octicon-link"></span></a>The problem</h2>
+<a id="the-problem" class="anchor" href="#the-problem" aria-hidden="true"><span class="octicon octicon-link"></span></a>The problem</h2>
 
 <p>Ever thought CSS selectors in your JavaScript were messy or wanted to reatttach JavaScript to the DOM after content was dynamically loaded?</p>
 
-<div class="highlight highlight-html"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"someSelector"</span><span class="nt">&gt;</span>..<span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"anotherSelector"</span><span class="nt">&gt;</span>..<span class="nt">&lt;/div&gt;</span>
-</pre></div>
+<div class="highlight highlight-html"><pre>&lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>someSelector<span class="pl-pds">"</span></span>&gt;..&lt;/<span class="pl-ent">div</span>&gt;
+&lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>anotherSelector<span class="pl-pds">"</span></span>&gt;..&lt;/<span class="pl-ent">div</span>&gt;</pre></div>
 
-<div class="highlight highlight-javascript"><pre><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
-  <span class="nx">$</span><span class="p">(</span><span class="s1">'.someSelector'</span><span class="p">).</span><span class="nx">pluginName</span><span class="p">();</span>
-  <span class="c1">//or</span>
-  <span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">SomeThing</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s1">'.anotherSelector'</span><span class="p">));</span>
-<span class="p">});</span>
-</pre></div>
+<div class="highlight highlight-javascript"><pre>$(<span class="pl-c1">document</span>).ready(<span class="pl-k">function</span>(){
+  $(<span class="pl-s"><span class="pl-pds">'</span>.someSelector<span class="pl-pds">'</span></span>).pluginName();
+  <span class="pl-c">//or</span>
+  <span class="pl-k">var</span> x <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">SomeThing</span>($(<span class="pl-s"><span class="pl-pds">'</span>.anotherSelector<span class="pl-pds">'</span></span>));
+});</pre></div>
 
 <p>Pretty messy, and what if the class name changes? </p>
 
 <h2>
-<a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage</h2>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage</h2>
 
-<div class="highlight highlight-html"><pre><span class="nt">&lt;div</span> <span class="na">data-attach=</span><span class="s">"id"</span><span class="nt">&gt;</span>..<span class="nt">&lt;/div&gt;</span> <span class="c">&lt;!-- Attachments matching id will be added to this element --&gt;</span>
-<span class="nt">&lt;div</span> <span class="na">data-attach=</span><span class="s">"id2"</span><span class="nt">&gt;</span>..<span class="nt">&lt;/div&gt;</span> <span class="c">&lt;!-- Attachments matching id2 will be added to this element --&gt;</span>
-<span class="nt">&lt;div</span> <span class="na">data-attach=</span><span class="s">"id id2"</span><span class="nt">&gt;</span>..<span class="nt">&lt;/div&gt;</span> <span class="c">&lt;!-- Attachments matching id and id2 will be added to this element --&gt;</span>
-</pre></div>
+<div class="highlight highlight-html"><pre>&lt;<span class="pl-ent">div</span> <span class="pl-e">data-attach</span>=<span class="pl-s"><span class="pl-pds">"</span>id<span class="pl-pds">"</span></span>&gt;..&lt;/<span class="pl-ent">div</span>&gt; <span class="pl-c">&lt;!-- Attachments matching id will be added to this element --&gt;</span>
+&lt;<span class="pl-ent">div</span> <span class="pl-e">data-attach</span>=<span class="pl-s"><span class="pl-pds">"</span>id2<span class="pl-pds">"</span></span>&gt;..&lt;/<span class="pl-ent">div</span>&gt; <span class="pl-c">&lt;!-- Attachments matching id2 will be added to this element --&gt;</span>
+&lt;<span class="pl-ent">div</span> <span class="pl-e">data-attach</span>=<span class="pl-s"><span class="pl-pds">"</span>id id2<span class="pl-pds">"</span></span>&gt;..&lt;/<span class="pl-ent">div</span>&gt; <span class="pl-c">&lt;!-- Attachments matching id and id2 will be added to this element --&gt;</span></pre></div>
 
-<div class="highlight highlight-javascript"><pre><span class="nx">Attach</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s1">'id'</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">el</span><span class="p">){..});</span> <span class="c1">//Add an attachment for id</span>
-<span class="nx">Attach</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s1">'id2'</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">el</span><span class="p">){..});</span> <span class="c1">//Add an attachment for id2</span>
-<span class="nx">Attach</span><span class="p">.</span><span class="nx">run</span><span class="p">();</span> <span class="c1">//Attach to DOM</span>
-</pre></div>
+<div class="highlight highlight-javascript"><pre>Attach.<span class="pl-c1">add</span>(<span class="pl-s"><span class="pl-pds">'</span>id<span class="pl-pds">'</span></span>,<span class="pl-k">function</span>(<span class="pl-smi">el</span>){..}); <span class="pl-c">//Add an attachment for id</span>
+Attach.<span class="pl-c1">add</span>(<span class="pl-s"><span class="pl-pds">'</span>id2<span class="pl-pds">'</span></span>,<span class="pl-k">function</span>(<span class="pl-smi">el</span>){..}); <span class="pl-c">//Add an attachment for id2</span>
+Attach.run(); <span class="pl-c">//Attach to DOM</span></pre></div>
 
 <h2>
-<a name="example" class="anchor" href="#example"><span class="octicon octicon-link"></span></a>Example</h2>
+<a id="example" class="anchor" href="#example" aria-hidden="true"><span class="octicon octicon-link"></span></a>Example</h2>
 
-<div class="highlight highlight-html"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"someSelector"</span> <span class="na">data-attach=</span><span class="s">"pluginName"</span><span class="nt">&gt;</span>..<span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"anotherSelector"</span> <span class="na">data-attach=</span><span class="s">"SomeThing"</span><span class="nt">&gt;</span>..<span class="nt">&lt;/div&gt;</span>
-</pre></div>
+<div class="highlight highlight-html"><pre>&lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>someSelector<span class="pl-pds">"</span></span> <span class="pl-e">data-attach</span>=<span class="pl-s"><span class="pl-pds">"</span>pluginName<span class="pl-pds">"</span></span>&gt;..&lt;/<span class="pl-ent">div</span>&gt;
+&lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>anotherSelector<span class="pl-pds">"</span></span> <span class="pl-e">data-attach</span>=<span class="pl-s"><span class="pl-pds">"</span>SomeThing<span class="pl-pds">"</span></span>&gt;..&lt;/<span class="pl-ent">div</span>&gt;</pre></div>
 
-<div class="highlight highlight-javascript"><pre><span class="nx">Attach</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s1">'pluginName'</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">el</span><span class="p">){</span>
-  <span class="nx">$</span><span class="p">(</span><span class="nx">el</span><span class="p">).</span><span class="nx">pluginName</span><span class="p">();</span>
-<span class="p">});</span>
-<span class="nx">Attach</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s1">'SomeThing'</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">el</span><span class="p">){</span>
-   <span class="k">new</span> <span class="nx">SomeThing</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="nx">el</span><span class="p">));</span>
-<span class="p">});</span>
+<div class="highlight highlight-javascript"><pre>Attach.<span class="pl-c1">add</span>(<span class="pl-s"><span class="pl-pds">'</span>pluginName<span class="pl-pds">'</span></span>,<span class="pl-k">function</span>(<span class="pl-smi">el</span>){
+  $(el).pluginName();
+});
+Attach.<span class="pl-c1">add</span>(<span class="pl-s"><span class="pl-pds">'</span>SomeThing<span class="pl-pds">'</span></span>,<span class="pl-k">function</span>(<span class="pl-smi">el</span>){
+   <span class="pl-k">new</span> <span class="pl-en">SomeThing</span>($(el));
+});
 
-<span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
-  <span class="nx">Attach</span><span class="p">.</span><span class="nx">run</span><span class="p">();</span>
-<span class="p">});</span>
-</pre></div>
+$(<span class="pl-c1">document</span>).ready(<span class="pl-k">function</span>(){
+  Attach.run();
+});</pre></div>
 
 <h2>
-<a name="api" class="anchor" href="#api"><span class="octicon octicon-link"></span></a>API</h2>
+<a id="api" class="anchor" href="#api" aria-hidden="true"><span class="octicon octicon-link"></span></a>API</h2>
 
 <ul>
 <li>
@@ -102,8 +84,10 @@
 <code>Attach.engine</code> {Object} Set this to replace the query engine an engine of your choice.</li>
 <li>
 <code>Attach.items</code> {Array} List of attachments.</li>
-</ul><h2>
-<a name="more-detailed-examples" class="anchor" href="#more-detailed-examples"><span class="octicon octicon-link"></span></a>More detailed examples:</h2>
+</ul>
+
+<h2>
+<a id="more-detailed-examples" class="anchor" href="#more-detailed-examples" aria-hidden="true"><span class="octicon octicon-link"></span></a>More detailed examples:</h2>
 
 <ul>
 <li>
@@ -116,21 +100,21 @@
 <a href="https://github.com/nicbell/attach.js/wiki/Reattaching-after-a-DOM-update">Reattaching after a DOM update</a>.</li>
 <li>
 <a href="https://github.com/nicbell/attach.js/wiki/Advanced-Mootools-example">Advanced Mootools example</a>.</li>
-</ul><h2></h2>
+</ul>
+
+<h2></h2>
 
 <p>This project was inspired by ClientCide's Behavior project and DOM instantiation in Twitter Bootstrap.</p>
-      </section>
-    </div>
 
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">Attach.js maintained by <a href="https://github.com/nicbell">nicbell</a></p>
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/nicbell/attach.js">Attach.js</a> is maintained by <a href="https://github.com/nicbell">nicbell</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
       </footer>
-    </div>
 
-              <script type="text/javascript">
+    </section>
+
+            <script type="text/javascript">
             var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
             document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
           </script>
@@ -141,6 +125,6 @@
             } catch(err) {}
           </script>
 
-
   </body>
 </html>
+
