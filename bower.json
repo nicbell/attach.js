@@ -1,9 +1,8 @@
 {
   "name": "Attach.js",
-  "version": "1.0.2",
   "description": "Attaches JavaScript to HTML without messy selectors.",
   "homepage": "http://nicbell.github.io/attach.js/",
-  "main": ["attach.js"],
+  "main": "attach.js",
   "ignore": [
     "**/.*",
     "*.json",
