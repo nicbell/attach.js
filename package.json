@@ -9,10 +9,7 @@
       "*.md",
       "*.nuspec"
     ],
-    "main": [
-      "attach.js",
-      "attach.min.js"
-    ],
+    "main": "attach.js",
     "repository": {
         "type": "git",
         "url": "git://github.com/nicbell/attach.js.git"

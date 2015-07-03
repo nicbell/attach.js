@@ -1,5 +1,5 @@
 /**
- * Attach.js v1.0.2
+ * Attach.js v1.0.3
  * Attaches JavaScript to HTML without messy selectors. 
  *
  * https://github.com/nicbell/attach.js
