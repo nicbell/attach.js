@@ -35,7 +35,8 @@ module.exports = function (grunt) {
                 plusplus: false,
                 sub: false,
                 trailing: true,
-                white: false
+                white: false,
+                globals: { define: true }
             },
             all: ['Gruntfile.js', 'attach.js']
         },
