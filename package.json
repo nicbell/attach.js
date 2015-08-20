@@ -1,6 +1,6 @@
 {
     "name": "attach.js",
-    "version": "1.0.4",
+    "version": "1.0.5",
     "description": "Attaches JavaScript to HTML without messy selectors.",
     "homepage": "http://nicbell.github.io/attach.js/",
     "ignore": [
