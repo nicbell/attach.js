@@ -1,4 +1,4 @@
-#Intro [![Build Status](https://travis-ci.org/nicbell/attach.js.png?branch=master)](https://travis-ci.org/nicbell/attach.js) [![NPM](https://nodei.co/npm/attach.js.png?mini=true)](https://nodei.co/npm/attach.js/)
+#Intro [![NPM](https://nodei.co/npm/attach.js.png?mini=true)](https://nodei.co/npm/attach.js/) [![Build Status](https://travis-ci.org/nicbell/attach.js.png?branch=master)](https://travis-ci.org/nicbell/attach.js) [![Downloads](https://img.shields.io/npm/dt/attach.js.svg)](https://www.npmjs.com/package/attach.js)
 
 Attach.js removes dependancy on messy CSS selectors when attaching JavaScript to the page. Attach.js also encapsulates all your DOM "attachments" so that they can easily be reattached when the page is dynamically updated (ie. via AJAX). 
 
