@@ -4,10 +4,10 @@
     "description": "Attaches JavaScript to HTML without messy selectors.",
     "homepage": "http://nicbell.github.io/attach.js/",
     "ignore": [
-      "**/.*",
-      "*.json",
-      "*.md",
-      "*.nuspec"
+        "**/.*",
+        "*.json",
+        "*.md",
+        "*.nuspec"
     ],
     "main": "attach.js",
     "repository": {
@@ -18,13 +18,15 @@
     "license": "MIT",
     "keywords": ["javascript", "attach", "DOM"],
     "devDependencies": {
-        "grunt": "~0.4.2",
-        "grunt-contrib-jshint": "~0.8.0",
-        "grunt-contrib-uglify": "~0.4.0",
-        "grunt-contrib-clean": "~0.5.0"
+        "grunt": "^1.6.1",
+        "grunt-contrib-clean": "^2.0.1",
+        "grunt-contrib-jshint": "^3.2.0",
+        "grunt-contrib-uglify": "^5.2.2"
     },
-
-	"scripts": {
-		"test": "grunt travis --verbose"
-	}
+    "scripts": {
+        "pretest": "npm i -g grunt-cli && npm i",
+        "test": "grunt test --verbose",
+        "pregrunt": "npm i -g grunt-cli && npm i",
+        "grunt": "grunt"
+    }
 }
