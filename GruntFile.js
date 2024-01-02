@@ -42,7 +42,7 @@ module.exports = function (grunt) {
         },
         uglify: {
             options: {
-                banner: '/*! <%= pkg.name %> v<%= pkg.version %> | <%= pkg.license %> license | <%= pkg.homepage %> */\n'
+                banner: '/*! <%= pkg.name %> v<%= pkg.version %> | <%= pkg.license %> license | <%= pkg.homepage %> 🚀 */\n'
             },
             dist: {
                 src: 'attach.js',
@@ -64,6 +64,6 @@ module.exports = function (grunt) {
     grunt.registerTask('test', ['jshint']);
     grunt.registerTask('default', ['test', 'uglify', 'clean']);
 
-    //This is an extra task incase we want to do something different with Travis CI
+    // This is an extra task incase we want to do something different with Travis CI
     grunt.registerTask('travis', ['jshint', 'uglify', 'clean']);
 };
