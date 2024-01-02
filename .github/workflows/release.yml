@@ -1,4 +1,4 @@
-name: Release minified
+name: Grunt release minified
 
 on:
   push:
