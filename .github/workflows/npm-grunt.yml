@@ -12,6 +12,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
     - uses: actions/setup-node@v4
       with:
         node-version: 18
@@ -25,6 +27,5 @@ jobs:
       run: |
           git config user.name github-actions
           git config user.email github-actions@github.com
-          git checkout ${{ github.event.pull_request.base.ref || github.head_ref || github.ref_name }}
           git commit -a -m "Committed by GitHub Actions [ci skip]"
           git push
