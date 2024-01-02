@@ -1,0 +1,32 @@
+name: Grunt release minified
+
+on:
+  push:
+    branches: [ "master" ]
+    tags:
+      - '*'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+    - uses: actions/setup-node@v4
+      with:
+        node-version: 18
+
+    - name: Build
+      run: |
+        npm install
+        grunt
+
+    - name: Push
+      run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git checkout ${{ github.event.pull_request.head.ref || github.head_ref || github.ref_name }}
+          git commit -a -m "Committed by GitHub Actions [ci skip]"
+          git push
