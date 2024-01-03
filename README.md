@@ -1,5 +1,7 @@
-# Attach.js [![NPM](https://nodei.co/npm/attach.js.png?mini=true)](https://nodei.co/npm/attach.js/) [![Build Status](https://github.com/nicbell/attach.js/actions/workflows/check.yml/badge.svg)](https://github.com/nicbell/attach.js/actions) ![Downloads](https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fnicbell%2Fnpm-statistics%2Fmaster%2Fpackages%2Fattach.js.json&style=flat&logo=null&label=downloads&color=%2341b91&link=https%3A%2F%2Fwww.npmjs.com%2Fpackage%2Fattach.js)
+# Attach.js 
 
+[![npm](https://img.shields.io/npm/v/attach.js?style=flat&logo=npm)](https://www.npmjs.com/package/attach.js)
+ [![Build Status](https://github.com/nicbell/attach.js/actions/workflows/check.yml/badge.svg)](https://github.com/nicbell/attach.js/actions) [![npm package minimized gzipped size](https://img.shields.io/bundlejs/size/attach.js?style=flat&color=pink)](https://www.npmjs.com/package/attach.js) ![Downloads](https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fnicbell%2Fnpm-statistics%2Fmaster%2Fpackages%2Fattach.js.json&style=flat&logo=null&label=downloads&color=violet&link=https%3A%2F%2Fwww.npmjs.com%2Fpackage%2Fattach.js)
 
 Attach.js removes dependancy on messy CSS selectors when attaching JavaScript to the page. Attach.js also encapsulates all your DOM "attachments" so that they can easily be reattached when the page is dynamically updated (ie. via AJAX). 
 
